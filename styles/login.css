@@ -1,0 +1,238 @@
+/* Obecné nastavení pro box model a reset */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Video na pozadí */
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Zajistí, že video pokryje celou obrazovku */
+  z-index: -1; /* Video bude za formulářem */
+}
+
+/* Formulář (pro oba formuláře) */
+.form-card {
+
+  width: 100%;
+  max-height: 70%;
+  max-width: 30rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  z-index: 1; 
+  position: absolute; /* Důležité pro posunutí */
+  top: 5%; /* Posune formulář na 20% výšky obrazovky od horního okraje videa */
+  left: 50%;
+  transform: translateX(-50%); /* Centrum horizontálně */
+}
+
+#form_header_container {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-input {
+  width: 60%;
+  outline: none;
+  margin: 0.2rem;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  border: 2px solid #ccc;
+  transition: border-color 1s ease;
+  
+}
+
+.form-input:hover {
+  border-color: #000000;
+}
+
+.form-input:focus {
+  border-color: #000000;
+}
+
+#form_header_container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: relative; 
+ 
+}
+
+#form_header {
+  margin: 0; 
+}
+
+.close-form {
+  position: absolute;
+  top: -1.5rem; 
+  right: -1rem; 
+  background: none; 
+  border: none; 
+  font-size: 30px; 
+  transition: 0.3s;
+  cursor: pointer;
+
+ 
+}
+
+
+.close-form:hover {
+  
+  transform: scale(1.3);
+  animation: blink 1s infinite;
+}
+/* pro blikani animace */
+@keyframes blink {
+  0% {
+    opacity: 1; /* Ikona plně viditelná */
+  }
+  50% {
+    opacity: 0.0; /* Ikona neviditelná */
+  }
+  100% {
+    opacity: 1; /* Ikona opět viditelná */
+  }
+}
+
+#button_container {
+  display: flex;
+  gap: 1rem; 
+  justify-content: center; 
+  margin: 0.5rem; /
+}
+
+#loginBtn, #registerBtn{
+  background-color: white;
+  border: 1px solid #747775;
+  border-radius: 2rem;
+  padding: 0 12px;
+  cursor: pointer;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 18px;
+  height: 40px;
+  text-align: center;
+  white-space: nowrap;
+  transition: 0.3s; 
+  width: 11rem;
+  
+  
+}
+
+#loginBtn, #registerBtn:hover {
+
+  background-color: #0F9D58;
+  transform: scale(1.1);
+}
+
+.gsi-material-button:hover{
+  background-color:#4285F4;
+  transform: scale(1.1);
+}
+
+.gsi-material-button {
+  
+  width: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #747775;
+  border-radius: 2rem;
+  padding: 0 14px;
+  cursor: pointer;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 12px;
+  height: 40px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible; /* Ujistěte se, že ikona není skrytá */
+  transition: 0.3s; 
+}
+
+.gsi-material-button-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  flex-shrink: 0;
+  
+}
+
+.gsi-material-button-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-grow: 1;
+  overflow: visible; 
+}
+
+.gsi-material-button-contents {
+  flex-grow: 1;
+  font-weight: 500;
+  text-overflow: ellipsis;
+}
+
+.gsi-material-button:hover {
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px rgba(60, 64, 67, 0.15);
+}
+
+.gsi-material-button:disabled .gsi-material-button-icon {
+  opacity: 0.4;
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* Styly pro již existující účet nebo registraci */
+.already-account p {
+  margin-top: 1rem;
+  text-align: center;
+}
+.user {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: lightgray;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.pop-up {
+  display: none; /* Okno je skryté */
+  position: absolute;
+  top: 0;
+  left: 60px; /* Pozice okna vedle avatara */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  z-index: 1000;
+}
